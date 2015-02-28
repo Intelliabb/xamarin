@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BirthdayCalendar.Views.Pages.LoginPage">
+	<ContentPage.Content>
+		
+		<StackLayout Orientation="Vertical" Padding="12,50,12,0">
+			<Image x:Name="headerImg" Source = "http://www.bntqb.org/home/images/stories/logos/logo_sogeti_pms485%20juiste%20jpg%20kleur.jpg" Aspect="AspectFit"/>
+			<BoxView x:Name="spacerBox" HeightRequest="15"/>
+			<Entry x:Name="txtUsername" Placeholder = "Sogeti Username" />
+			<Entry x:Name="txtPassword" Placeholder = "Sogeti Password" IsPassword="true" />
+			<Button x:Name="btnLogin" Text = "Log In" Clicked = "btnLogin_Clicked" />
+		</StackLayout>
+
+	</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="BirthdayCalendar.Views.Pages.EmployeeSavePage"
+		xmlns:controls="clr-namespace:BirthdayCalendar.Controls;assembly=BirthdayCalendar">
+	<ContentPage.Content>
+			<StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+				<TableView x:Name="MainTable" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Intent="Form">
+					<TableView.Root>
+						<TableSection Title="NAME">
+							<EntryCell 
+							x:Name="ContactImageUrl" 
+							Label="IMAGE" 
+							Text="{Binding ImageUrl, Mode=TwoWay}" 
+							Placeholder="e.g. www.example.com/image.jpg"
+							/>
+
+							<EntryCell 
+								x:Name="ContactName" 
+								Label="NAME"
+								Text="{Binding Name, Mode=TwoWay}" 
+								Placeholder="e.g. John Doe" />
+						</TableSection>
+
+						<TableSection Title="COMPANY">
+							<EntryCell 
+								x:Name="ContactTitle" 
+								Label="TITLE" 
+								Text="{Binding Title, Mode=TwoWay}" 
+								Placeholder="e.g. Sr. Consultant"/>
+
+							<EntryCell 
+								x:Name="ContactPractice" 
+								Label="PRACTICE"
+								Text="{Binding Practice}" 
+								Placeholder="e.g. DT"/>
+
+							<EntryCell 
+								x:Name="ContactUnit" 
+								Label="UNIT"
+								Text="{Binding Unit}" 
+								Placeholder="e.g. Houston"/>
+						</TableSection>
+				
+						<TableSection Title="DOB">
+								<ViewCell>
+									<DatePicker
+										x:Name="DOBPicker"
+										Date="{Binding DOB}"
+										HorizontalOptions="EndAndExpand"/>
+								</ViewCell>
+						</TableSection>
+					</TableView.Root>
+				</TableView>
+				<Button x:Name="SaveButton"
+					Clicked="SaveButton_Clicked"
+					Text = "Save"
+					HorizontalOptions = "FillAndExpand"
+					/>
+				<Button x:Name="DeleteButton"
+					Clicked="DeleteButton_Clicked"
+					Text = "Delete"
+					HorizontalOptions = "FillAndExpand"
+					TextColor = "Red"
+					/>
+			</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

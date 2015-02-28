@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+		xmlns="http://xamarin.com/schemas/2014/forms" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+		x:Class="BirthdayCalendar.Views.Pages.EmployeeDetailsPage"
+		Title="{Binding Name}">
+	<ContentPage.Content>
+
+	<Grid x:Name="MainGrid">
+	<TableView x:Name="MainTable" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Intent="Form">
+		<TableView.Root>
+			<TableSection Title="NAME">
+				<ImageCell x:Name="ContactImageCell" ImageSource="{Binding ImageUrl}" Text="{Binding Name}"/>
+			</TableSection>
+
+			<TableSection Title="COMPANY">
+				<TextCell x:Name="ContactTitle" Text="TITLE" Detail="{Binding Title}"/>
+				<TextCell x:Name="ContactPractice" Text="PRACTICE" Detail="{Binding Practice}"/>
+				<TextCell x:Name="ContactUnit" Text="UNIT" Detail="{Binding Unit}"/>
+			</TableSection>
+	
+			<TableSection Title="OTHER">
+				<TextCell x:Name="ContactDOB" Text="DOB" Detail="{Binding Path=DOB, StringFormat=\{0:MMMM d yyyy\}}"/>
+			</TableSection>
+		</TableView.Root>
+	</TableView>
+	</Grid>
+	</ContentPage.Content>
+</ContentPage>

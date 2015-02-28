@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="BirthdayCalendar.Views.Pages.EmployeesListPage" 
+	Title="{Binding Title}">
+
+	<ContentPage.Content>
+		<ListView x:Name="listView" ItemSelected="listViewItemSelected" RowHeight="65">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ViewCell.View>
+							<Grid Padding="5">
+
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+
+						  	<Grid.ColumnDefinitions>
+							    <ColumnDefinition Width="auto" />
+							    <ColumnDefinition Width="*" />
+							   </Grid.ColumnDefinitions>
+
+							   <Image
+							   		Grid.Column="0"
+									Source="{Binding ImageUrl}"
+									HeightRequest="60"
+									WidthRequest="60"/>
+
+								<StackLayout
+									Grid.Column="1"
+									Padding="5,0,0,0"
+									Orientation="Vertical" 
+									VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+									<Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" YAlign="Start"/>
+									<Label Text="{Binding Title}" FontSize="14" YAlign="End" TextColor="Gray" />
+								</StackLayout>
+								<StackLayout
+									Grid.Column="2"
+									Padding="10,0,5,0"
+									Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+									<Label Text="{Binding DOB, StringFormat=\{0:MMMM\}}" FontSize="12" TextColor="Gray" XAlign="End" YAlign="Start"/>
+									<Label Text="{Binding DOB, StringFormat=\{0:dd\}}" FontSize="12" TextColor="Gray" XAlign="End" YAlign="End"/>
+								</StackLayout>
+							</Grid>
+						</ViewCell.View>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>

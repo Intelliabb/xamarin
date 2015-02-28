@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{FE84702F-3F34-4F11-AF21-1BE266303B57}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>BirthdayCalendar</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)BirthdayCalendar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\EmployeesListPage.xaml.cs">
+      <DependentUpon>EmployeesListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Employee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\EmployeeDetailsPage.xaml.cs">
+      <DependentUpon>EmployeeDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\EmployeeViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\SampleData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Data\EmployeesRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EmployeeSaveViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Pages\EmployeeSavePage.xaml.cs">
+      <DependentUpon>EmployeeSavePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Data\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Resources\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\EmployeesListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\EmployeeDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Pages\EmployeeSavePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
